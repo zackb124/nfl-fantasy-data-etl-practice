@@ -35,16 +35,12 @@
 
 <div align="left">
   
-The following scripts builts for supporting the data visualization process of the FOA organization. Each folder contains a different kind of report, when the data cleaning is pretty similar. 
-
-The code built in Python and use multiple tools for data analysis & BI (pandas, matplotlib and so on).
-
-Please note that the data cleaning stage has been structured according to the unique FOA database elements.
-
-This project made as a part of TAU Digital Society Studies.
+The following program aim is to using NFL fantasy league data as an indicator for players popylarty.
+  
+It is using a scraper to import the data, upload and update it concictely on a PostgreSQL DB, and by being connected to the server: Analyse the 
+data on real time.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 &nbsp; 
 
@@ -107,16 +103,6 @@ Make sure that your Python version is 3.8 or higher. For running the scripts pro
 
   ```    
 &nbsp; 
-  
-<p <b>Kindly note</b></p>
- 
-Our team structured the code according to the organization's database. For this reason, you might get into unique values you should replace according to your data set variables names/indexes. 
-  
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-&nbsp; 
-
-<div align="left">
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -137,7 +123,6 @@ The project can be used any time when integrated between a SQL server (Postgre, 
 
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -164,8 +149,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 Tzachi Bakshi 
   
 [![LinkedIn - Tzachi][linkedin-shield]][linkedin-url]
-
-Project Link - [https://github.com/FOA-TAU-Data-analysis-project](https://github.com/zackb124/FOA-TAU-Data-analysis-project)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
