@@ -52,8 +52,7 @@ data on real time.
 
 * [Pandas](https://pandas.pydata.org/docs/user_guide/index.html#user-guide)
 * [Matplotlib](https://matplotlib.org/)
-* [GENSIM](https://radimrehurek.com/gensim/)
-* [NLTK](https://www.nltk.org/#)
+* [SQLAlchemy](https://www.sqlalchemy.org/)
 * [FPDF](https://pyfpdf.readthedocs.io/en/latest/)  
   
   
@@ -85,22 +84,15 @@ Make sure that your Python version is 3.8 or higher. For running the scripts pro
   ``` 
   
 
-* NLTK
+* SQLAlchemy
   ```sh
-  pip install nltk
+  pip install sqlalchemy
 
   ```
-  
-
-* GENSIM
-  ```sh
-  pip install gensim
-
-  ```  
+ 
 * FPDF
   ```sh
   pip install fpdf
-
   ```    
 &nbsp; 
 
