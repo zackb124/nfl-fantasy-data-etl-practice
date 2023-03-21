@@ -9,7 +9,6 @@ tables = pd.read_html(url)
 table_df = tables[0]
 
 # print the data frame to verify that it has been created successfully
-
 table_df.columns = table_df.columns.droplevel(level=0)
 
 # choose the relevant columns from the table
