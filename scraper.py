@@ -12,24 +12,4 @@ table_df = tables[0]
 # print the data frame to verify that it has been created successfully
 table_df.columns = table_df.columns.droplevel(level=0)
 
-players_df = table_df.loc[:, ['Player', 'Tm','Age']].assign(Player=lambda x: x['Player'].replace(r'[*+]', '', regex=True)).loc[lambda x: x['Age'].str.isdigit()]
-
-players_df["Timestamp"] = pd.to_datetime(dt.datetime.now())
-
-
-
-
-
-
-
-
-
-
-# # choose the relevant columns from the table
-# players_df = table_df.loc[:, ['Player', 'Tm','Age']]
-#
-# # clean the text from irrelevant symbols from the Player column
-# players_df['Player'] = players_df['Player'].replace(r'[*+]', '', regex=True)
-#
-# # clean the Age column from rows that aren't numbers
-# players_df = players_df[players_df['Age'].str.isdigit()]
+players_df = table_df.loc[:, ['Player', 'Tm','Age']].assign(Player=lambda x: x['Player'].replace(r'[*+]', '', regex=True)).loc[lambda x: x['Age'].str.isdigit()].assign(Timestamp=pd.to_datetime(dt.datetime.now()))
