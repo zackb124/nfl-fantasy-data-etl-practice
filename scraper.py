@@ -1,4 +1,5 @@
 import pandas as pd
+import datetime as dt
 
 url = 'https://www.pro-football-reference.com/years/2022/fantasy.htm'
 
@@ -11,11 +12,24 @@ table_df = tables[0]
 # print the data frame to verify that it has been created successfully
 table_df.columns = table_df.columns.droplevel(level=0)
 
-# choose the relevant columns from the table
-players_df = table_df.loc[:, ['Player', 'Tm','Age']]
+players_df = table_df.loc[:, ['Player', 'Tm','Age']].assign(Player=lambda x: x['Player'].replace(r'[*+]', '', regex=True)).loc[lambda x: x['Age'].str.isdigit()]
 
-# clean the text from irrelevant symbols from the Player column
-players_df['Player'] = players_df['Player'].replace(r'[*+]', '', regex=True)
+players_df["Timestamp"] = pd.to_datetime(dt.datetime.now())
 
-# clean the Age column from rows that aren't numbers
-players_df = players_df[players_df['Age'].str.isdigit()]
+
+
+
+
+
+
+
+
+
+# # choose the relevant columns from the table
+# players_df = table_df.loc[:, ['Player', 'Tm','Age']]
+#
+# # clean the text from irrelevant symbols from the Player column
+# players_df['Player'] = players_df['Player'].replace(r'[*+]', '', regex=True)
+#
+# # clean the Age column from rows that aren't numbers
+# players_df = players_df[players_df['Age'].str.isdigit()]
