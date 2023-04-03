@@ -1,0 +1,30 @@
+import pandas as pd
+import datetime as dt
+
+url = 'https://www.pro-football-reference.com/years/2022/fantasy.htm'
+
+# read tables from the url
+tables = pd.read_html(url)
+
+# select the table you want to convert to a data frame (in this case, the first table)
+table_df = tables[0]
+
+# print the data frame to verify that it has been created successfully
+table_df.columns = table_df.columns.droplevel(level=0)
+
+players_df = table_df.loc[:, ['Player', 'Tm','Age']].assign(Player=lambda x: x['Player'].replace(r'[*+]', '', regex=True)).loc[lambda x: x['Age'].str.isdigit()].assign(Timestamp=pd.to_datetime(dt.datetime.now()))
+
+# # choose the relevant columns from the table
+# players_df = table_df.loc[:, ['Player', 'Tm','Age']]
+# # clean the text from irrelevant symbols from the Player column
+# players_df['Player'] = players_df['Player'].replace(r'[*+]', '', regex=True)
+# # clean the Age column from rows that aren't numbers
+#players_df["Timestamp"] = pd.to_datetime(dt.datetime.now())
+# players_df = players_df[players_df['Age'].str.isdigit()]
+
+
+NOTE that Python comment already build a table according to the different DF values and Dtypes.
+That means that there isn't need to build a new table with a different commend (like that):
+
+# build a new table on PostgreSQL
+# engine.execute("CREATE TABLE nfl_fantasy_players (Player TEXT, Tm TEXT,Age INT, Datetime TIMESTAMP,Rk INT)")
